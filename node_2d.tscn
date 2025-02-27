@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://deniacswestg7"]
+[gd_scene load_steps=4 format=3 uid="uid://deniacswestg7"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://yfy2w7v8t6oe" path="res://player/player.tscn" id="1_43gp0"]
+[ext_resource type="Script" path="res://player/player.gd" id="2_6hbqy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6juj"]
+size = Vector2(42, 650)
+
+[node name="Playground" type="Node2D"]
+
+[node name="Map_main" type="TileMapLayer" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_43gp0")]
+script = ExtResource("2_6hbqy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1173, 324)
+shape = SubResource("RectangleShape2D_x6juj")
