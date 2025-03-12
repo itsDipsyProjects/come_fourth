@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://7hl5gtune3eq"]
+
+[node name="textbox" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = -3.0
+offset_top = 442.0
+offset_right = 243.0
+offset_bottom = 530.0
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 15.0
+offset_right = 245.0
+offset_bottom = 82.0
+text = "Reach the highest Island 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
