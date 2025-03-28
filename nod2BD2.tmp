@@ -1,7 +1,8 @@
-[gd_scene load_steps=35 format=4 uid="uid://deniacswestg7"]
+[gd_scene load_steps=36 format=4 uid="uid://deniacswestg7"]
 
 [ext_resource type="PackedScene" uid="uid://yfy2w7v8t6oe" path="res://player/player.tscn" id="1_43gp0"]
 [ext_resource type="Texture2D" uid="uid://rglv8obopw7" path="res://assets/tilemaps/Island-Sheet.png" id="1_aoorj"]
+[ext_resource type="Script" path="res://menu.gd" id="1_o6ujq"]
 [ext_resource type="Texture2D" uid="uid://ludk82nj7aow" path="res://assets/1.png" id="1_r5xrp"]
 [ext_resource type="Script" path="res://player/player.gd" id="2_6hbqy"]
 [ext_resource type="Texture2D" uid="uid://cqq6jha3847m4" path="res://assets/4.png" id="2_ara6v"]
@@ -1411,7 +1412,7 @@ size = Vector2(17, 654)
 size = Vector2(28, 634)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4f6h"]
-size = Vector2(123.5, 29.3987)
+size = Vector2(121, 30.7188)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyo68"]
 size = Vector2(249, 20)
@@ -1429,6 +1430,7 @@ size = Vector2(44, 17.5)
 size = Vector2(23, 36)
 
 [node name="Playground" type="Node2D"]
+script = ExtResource("1_o6ujq")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(577, 224)
@@ -1479,45 +1481,11 @@ tile_set = SubResource("TileSet_10u5e")
 position = Vector2(205, 616)
 script = ExtResource("2_6hbqy")
 
-[node name="Control" type="Control" parent="Player"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -94.0
-offset_top = -97.0
-offset_right = 103.0
-offset_bottom = 47.0
-script = ExtResource("12_s41qv")
-
-[node name="ColorRect" type="ColorRect" parent="Player/Control"]
-layout_mode = 0
-offset_left = -143.0
-offset_top = -82.0
-offset_right = 341.0
-offset_bottom = 229.0
-color = Color(0, 0, 0, 0.611765)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Player/Control"]
-layout_mode = 0
-offset_left = -19.0
-offset_top = -4.0
-offset_right = 215.0
-offset_bottom = 122.0
-alignment = 1
-
-[node name="restart" type="Button" parent="Player/Control/VBoxContainer"]
-layout_mode = 2
-text = "restart
-"
-
-[node name="exit" type="Button" parent="Player/Control/VBoxContainer"]
-layout_mode = 2
-text = "exit"
-
 [node name="treecollision" type="StaticBody2D" parent="."]
 position = Vector2(707, 560.125)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="treecollision"]
-position = Vector2(-380, -27.125)
+position = Vector2(-380, -36.125)
 shape = SubResource("RectangleShape2D_o1ib4")
 
 [node name="Worldboundary1" type="StaticBody2D" parent="."]
@@ -1571,13 +1539,13 @@ shape = SubResource("RectangleShape2D_j4f6h")
 [node name="IslandCollision7" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IslandCollision7"]
-position = Vector2(336, 407.32)
+position = Vector2(336, 410)
 shape = SubResource("RectangleShape2D_j4f6h")
 
 [node name="IslandCollision5" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IslandCollision5"]
-position = Vector2(540.25, 365.699)
+position = Vector2(539, 367.719)
 shape = SubResource("RectangleShape2D_j4f6h")
 
 [node name="IslandCollision4" type="StaticBody2D" parent="."]
@@ -1629,3 +1597,27 @@ script = ExtResource("10_bvrqj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishLevelArea"]
 position = Vector2(1074, 623)
 shape = SubResource("RectangleShape2D_w6ama")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 111.0
+offset_top = 519.0
+offset_right = 308.0
+offset_bottom = 663.0
+script = ExtResource("12_s41qv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 234.0
+offset_bottom = 126.0
+alignment = 1
+
+[node name="restart" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Restart Level"
+
+[node name="exit" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "Exit game
+"

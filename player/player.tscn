@@ -1,30 +1,70 @@
-[gd_scene load_steps=3 format=3 uid="uid://yfy2w7v8t6oe"]
+[gd_scene load_steps=6 format=3 uid="uid://yfy2w7v8t6oe"]
 
-[ext_resource type="Texture2D" uid="uid://cl6yq0wfpm2kt" path="res://assets/icon.svg" id="1_iocut"]
+[ext_resource type="Texture2D" uid="uid://bp8yo1anir0c6" path="res://assets/player/my_knight/Idle.png" id="1_vthl2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4ntd"]
-size = Vector2(27.5, 28.5)
+size = Vector2(35.75, 30.25)
+
+[sub_resource type="Animation" id="Animation_j4gpy"]
+resource_name = "idle"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.156346, -2.98023e-08, 0.2, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_dwwkj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xag1t"]
+_data = {
+"RESET": SubResource("Animation_dwwkj"),
+"idle": SubResource("Animation_j4gpy")
+}
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(552, 300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(3.25, 3.75)
+position = Vector2(-0.125, -1.875)
 shape = SubResource("RectangleShape2D_s4ntd")
 one_way_collision_margin = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-87, 11)
-scale = Vector2(1.125, 0.220652)
-hframes = 4
-frame = 2
-
-[node name="Icon" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(80, -31.7242)
-scale = Vector2(0.15625, 0.748847)
-texture = ExtResource("1_iocut")
+position = Vector2(-1, -6)
+scale = Vector2(0.843262, 0.60795)
+texture = ExtResource("1_vthl2")
+hframes = 2
+vframes = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -50)
 zoom = Vector2(2.5, 2.5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xag1t")
+}

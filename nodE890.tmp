@@ -1411,7 +1411,7 @@ size = Vector2(17, 654)
 size = Vector2(28, 634)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4f6h"]
-size = Vector2(123.5, 29.3987)
+size = Vector2(121, 30.7188)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyo68"]
 size = Vector2(249, 20)
@@ -1490,7 +1490,7 @@ script = ExtResource("12_s41qv")
 
 [node name="ColorRect" type="ColorRect" parent="Player/Control"]
 layout_mode = 0
-offset_left = -143.0
+offset_left = -134.0
 offset_top = -82.0
 offset_right = 341.0
 offset_bottom = 229.0
@@ -1498,26 +1498,28 @@ color = Color(0, 0, 0, 0.611765)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Player/Control"]
 layout_mode = 0
-offset_left = -19.0
-offset_top = -4.0
-offset_right = 215.0
-offset_bottom = 122.0
+offset_right = 234.0
+offset_bottom = 126.0
 alignment = 1
+
+[node name="resume" type="Button" parent="Player/Control/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
 
 [node name="restart" type="Button" parent="Player/Control/VBoxContainer"]
 layout_mode = 2
-text = "restart
-"
+text = "Restart Level"
 
 [node name="exit" type="Button" parent="Player/Control/VBoxContainer"]
 layout_mode = 2
-text = "exit"
+text = "Exit game
+"
 
 [node name="treecollision" type="StaticBody2D" parent="."]
 position = Vector2(707, 560.125)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="treecollision"]
-position = Vector2(-380, -27.125)
+position = Vector2(-380, -36.125)
 shape = SubResource("RectangleShape2D_o1ib4")
 
 [node name="Worldboundary1" type="StaticBody2D" parent="."]
@@ -1571,13 +1573,13 @@ shape = SubResource("RectangleShape2D_j4f6h")
 [node name="IslandCollision7" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IslandCollision7"]
-position = Vector2(336, 407.32)
+position = Vector2(336, 410)
 shape = SubResource("RectangleShape2D_j4f6h")
 
 [node name="IslandCollision5" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IslandCollision5"]
-position = Vector2(540.25, 365.699)
+position = Vector2(539, 367.719)
 shape = SubResource("RectangleShape2D_j4f6h")
 
 [node name="IslandCollision4" type="StaticBody2D" parent="."]
